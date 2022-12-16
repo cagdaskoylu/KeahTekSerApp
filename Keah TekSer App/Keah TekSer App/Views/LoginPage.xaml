@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Keah_TekSer_App.Views.LoginScreen"
+             Background="red">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"></OnPlatform>
+    </ContentPage.Padding>
+
+
+    <StackLayout VerticalOptions="Center"
+                     Padding="20">
+
+        <Image x:Name="hospitalLogo" 
+                   WidthRequest="150"
+                   VerticalOptions="Center"
+                   HorizontalOptions="FillAndExpand"/>
+
+        <Label x:Name="welcomeText" 
+                   Text="Teknik Servis Personel Uygulaması"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="20" 
+                   HeightRequest="50"    />
+
+
+        <Frame x:Name="idFrame"
+                   BackgroundColor="White"
+                   CornerRadius="20"
+                   HeightRequest="45"
+                   Padding="6">
+
+            <Entry x:Name="idEntry"
+                       Placeholder="TC Kimlik Numarası"
+                       PlaceholderColor="Black"
+                       Keyboard="Numeric"
+                       TextColor="Black"           />
+        </Frame>
+
+        <Frame x:Name="passwordFrame" 
+                   BackgroundColor="White"
+                   CornerRadius="20"
+                   HeightRequest="45"
+                   Padding="6">
+
+            <Entry x:Name="passwordEntry"  
+       
+                       Placeholder="Şifre"
+                       PlaceholderColor="Black" 
+                       IsPassword="True"
+                       TextColor="Black"       />
+        </Frame>
+
+        <Button x:Name="loginButton"
+                    Text="GİRİŞ" 
+                    BackgroundColor="White"
+                    CornerRadius="20"
+                    TextColor="Black"  
+                    HorizontalOptions="Center"
+                    Clicked="LoginButtonClicked"/>
+
+        <!--<Label x:Name="messageLabel"
+               Text="{Binding Message}"
+               IsVisible="true"/>-->
+
+    </StackLayout>
+
+</ContentPage>

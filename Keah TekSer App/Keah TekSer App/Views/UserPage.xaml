@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Keah_TekSer_App.Views.UserPage">
+
+    <StackLayout>
+        <Grid Padding="10"
+              BackgroundColor="Red"
+              HeightRequest="60">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="cevaplanmanmisCagrilar"
+                Text="Cevaplanmamış Çağrılar"
+                    FontSize="10"
+                    FontAttributes="Bold"
+                    BackgroundColor="LightGreen"
+                    TextColor="Red"
+                    Grid.Row="0"
+                    Clicked="CevaplanmamisCagrilarClicked"/>
+
+            <Button x:Name="tumCagrilar"
+                    Text="Tüm Çağrılar"
+                    FontSize="10"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+                    TextColor="Red"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Clicked="TumCagrilarClicked"
+                    HeightRequest="1"/>
+
+        </Grid>
+
+        <Label x:Name="pageTopic" 
+               Text="Cevaplanmamış Çağrılar:"
+               FontSize="Large"
+               Padding="10"
+               TextColor="Black"/>
+
+        <Frame HeightRequest="100"
+               Padding="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Label  x:Name="createdByTopic" Text= "Bakım İsteyen Personel" Grid.Column="0" ></Label>
+                <Label  x:Name="topicTopic" Text= "Bakım Sebebi" Grid.Column="1"></Label>
+                <Label  x:Name="descriptionTopic" Text= "Bakım İsteği Açıklaması" Grid.Column="2"></Label>
+                <Label  x:Name="dateTopic" Text= "Bakım İsteği Tarihi" Grid.Column="3"></Label>
+                <Label  x:Name="statuTopic" Text= "Statü" Grid.Column="4"></Label>
+            </Grid>
+        </Frame>
+
+        <Label x:Name="cagriYokLabel" 
+               Text="Çağrı yok!"
+               FontSize="Small"
+               Padding="10"
+               TextColor="Black"
+               IsVisible="false"
+               VerticalOptions="Start"/>
+
+        <ListView x:Name="callView" HasUnevenRows="True" ItemSelected="CallViewItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Label x:Name="createdBy" Text= "{Binding CBI_ISTEYEN_PER_SEQ}" Grid.Column="0" ></Label>
+                                <Label x:Name="topic" Text= "{Binding BAKIM_SEBEBI_STRING}" Grid.Column="1"></Label>
+                                <Label x:Name="description" Text= "{Binding CBI_ACIKLAMA}" Grid.Column="2"></Label>
+                                <Label x:Name="dateTime" Text= "{Binding CBI_ISTEK_TARIH_STRING}" Grid.Column="3"></Label>
+                                <Label x:Name="statu" Text= "{Binding STATU}" Grid.Column="4"></Label>
+                            </Grid>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid HeightRequest="60"
+              VerticalOptions="EndAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Button x:Name="cikisButton"
+                  Text="Çıkış Yap"
+                  FontSize="10"
+                  FontAttributes="Bold"
+                  BackgroundColor="Red"
+                  TextColor="White"
+                  Clicked="CikisButtonClicked"
+                    Grid.Column="1"/>
+
+            <Button x:Name="refreshButton"
+                  Text="Yenile"
+                  FontSize="10"
+                  FontAttributes="Bold"
+                  BackgroundColor="Blue"
+                  TextColor="White"
+                  Clicked="RefreshButtonClicked"/>
+
+        </Grid>
+
+        
+    </StackLayout>
+
+</ContentPage>

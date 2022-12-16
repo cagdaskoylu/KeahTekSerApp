@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Keah_TekSer_App.Views.ResponsePage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Grid VerticalOptions="StartAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Label x:Name="topicDefaultLabel"
+                       Text="Bakım sebebi: "
+                       TextColor="Black"
+                       Grid.Row="0"/>
+                <Label x:Name="topicInputLabel" 
+                       Text=""
+                       TextColor="Black"
+                       Grid.Row="0"
+                       Grid.Column = "1"/>
+
+                <Label x:Name="descriptionDefaultLabel" 
+                       Text="Açıklama: "
+                       TextColor="Black"
+                       Grid.Row="1"/>
+                <Label x:Name="descriptionInputLabel" 
+                       Text=""
+                       TextColor="Black"
+                       Grid.Row="1"
+                       Grid.Column = "1"/>
+
+                <Label x:Name="datePickerLabel" 
+                       Text="Bakım Tarihi:"
+                       TextColor="Black"
+                       Grid.Row="2"
+                       Grid.Column = "0"/>
+                <DatePicker x:Name="datePicker" Grid.Row="2" Grid.Column="1"/>
+
+                <Label x:Name="timeStartLabel" 
+                       Text="Saat Aralığı:"
+                       TextColor="Black"
+                       Grid.Row="3"
+                       Grid.Column = "0"/>
+                <TimePicker x:Name="timeStart" Grid.Row="4" Grid.Column="0"  />
+                <TimePicker x:Name="timeEnd" Grid.Row="4" Grid.Column="1" />
+            </Grid>
+
+            <Label x:Name="descriptionBeforeDefaultLabel"
+                   Text="Bakım Öncesi Açıklama:"
+                   TextColor="Black"
+                   FontSize="13"/>
+            <Editor x:Name="descriptionBeforeEditor"
+                    BackgroundColor="#F2F4F1"
+                    Placeholder="Bakım isteği ile ilgili cevabınızı buraya yazın."
+                    FontSize="15"
+                    HeightRequest="80"
+                    HorizontalOptions="Fill"/>
+
+            <Label x:Name="descriptionAfterDefaultLabel"
+                   Text="Bakım Sonrası Açıklama:"
+                   TextColor="Black"
+                   FontSize="13"/>
+            <Editor x:Name="descriptionAfterEditor"
+                    BackgroundColor="#F2F4F1"
+                    Placeholder="Bakım isteği ile ilgili cevabınızı buraya yazın."
+                    FontSize="15"
+                    HeightRequest="80"
+                    HorizontalOptions="Fill"/>
+
+            <Label x:Name="operationMadeLabel"
+                   Text="Yapılan İşlemler:"
+                   TextColor="Black"
+                   FontSize="13"/>
+            <Editor x:Name="operationMadeEditor"
+                    BackgroundColor="#F2F4F1"
+                    Placeholder="Bakım isteği ile ilgili cevabınızı buraya yazın."
+                    FontSize="15"
+                    HeightRequest="80"
+                    HorizontalOptions="Fill"/>
+
+            <Button x:Name="responseButton"
+                    Text="Cevapla"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    Clicked="ResponseButtonClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
